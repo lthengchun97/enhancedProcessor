@@ -1,0 +1,90 @@
+module integrate_tb();
+reg clock,reset,enter;
+reg [7:0] in1;
+wire halt;
+wire [7:0] out1;
+wire [2:0] irOut;
+wire [3:0] showstate;
+
+wire [3:0] simulated;
+reg [3:0] expected;
+integer error=0;
+integer cycle=0;
+
+parameter s0=4'b0000,s1=4'b0001,s2=4'b0010,s3=4'b1000,s4=4'b1001,s5=4'b1010,s6=4'b1011,s7=4'b1100,s8=4'b1101,s9=4'b1110,s10=4'b1111;
+ assign simulated = showstate;
+  initial
+  begin
+  clock =0;
+  forever #10 clock = ~clock;
+  end
+  
+  initial
+  begin
+  reset <=0;
+  @(posedge clock);
+  @(negedge clock) reset = 1;
+  end
+	
+  initial
+  begin
+  $display("Simulated		Expected		State");
+  test();
+  #9000 $finish;
+  end
+  
+ task test();
+	begin
+	in1=0;
+	enter=0;
+	
+	#2 enter = 1;
+	#2 in1=9;
+	
+	end
+	endtask
+	
+integrate ee(clock,reset,enter,in1[7:0],halt,out1[7:0],irOut[2:0],showstate[3:0]);
+
+always@(showstate)
+  begin
+  case(showstate)
+    s0: expected = 4'b0000;
+    s1: expected = 4'b0001;
+    s2: expected = 4'b0010;
+    s3: expected = 4'b1000;
+    s4: expected = 4'b1001;
+    s5: expected = 4'b1010;
+    s6: expected = 4'b1011;
+    s7: expected = 4'b1100;
+    s8: expected = 4'b1101;
+    s9: expected = 4'b1110;
+    s10: expected = 4'b1111;
+    default: expected = 4'b0000;
+endcase
+end 
+
+always@(simulated)
+begin
+check(simulated,expected);
+end
+
+task check;
+  input [3:0] simulated_value;
+  input [3:0] expected_value;
+begin
+  //enhanced_1();
+  
+  if(simulated_value[3:0] != expected_value[3:0])
+    begin
+      error = error +1;
+      $display ("Simulated value =%b , Expected value =%b ,error =%d,at time=%d\n",simulated_value,expected_value,error,$time);
+    end
+   else
+   begin
+	$display("%b			%b			%h",simulated_value,expected_value,showstate);
+end
+end
+endtask
+
+endmodule

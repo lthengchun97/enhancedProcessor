@@ -1,0 +1,26 @@
+|enhanced
+clock => state~1.DATAIN
+reset => state~3.DATAIN
+Aeq0 => Selector0.IN3
+Apos => Selector0.IN4
+enter => Selector1.IN4
+enter => Selector2.IN2
+ir[0] => Decoder0.IN2
+ir[1] => Decoder0.IN1
+ir[2] => Decoder0.IN0
+IRload <= IRload.DB_MAX_OUTPUT_PORT_TYPE
+JMPmux <= JMPmux.DB_MAX_OUTPUT_PORT_TYPE
+PCload <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+Meminst <= Meminst.DB_MAX_OUTPUT_PORT_TYPE
+MemWr <= MemWr.DB_MAX_OUTPUT_PORT_TYPE
+Asel[0] <= Asel[0].DB_MAX_OUTPUT_PORT_TYPE
+Asel[1] <= Asel[1].DB_MAX_OUTPUT_PORT_TYPE
+Aload <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Sub <= Sub.DB_MAX_OUTPUT_PORT_TYPE
+Halt <= Halt.DB_MAX_OUTPUT_PORT_TYPE
+showstate[0] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+showstate[1] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+showstate[2] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+showstate[3] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+
+

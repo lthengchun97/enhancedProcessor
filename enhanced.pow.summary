@@ -1,0 +1,12 @@
+PowerPlay Power Analyzer Status : Successful - Wed Jan 03 18:35:05 2018
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : enhanced
+Top-level Entity Name : enhanced
+Family : Cyclone II
+Device : EP2C20F484C7
+Power Models : Final
+Total Thermal Power Dissipation : 82.11 mW
+Core Dynamic Thermal Power Dissipation : 3.55 mW
+Core Static Thermal Power Dissipation : 47.38 mW
+I/O Thermal Power Dissipation : 31.18 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data
