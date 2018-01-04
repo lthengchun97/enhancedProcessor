@@ -1,15 +1,15 @@
-Fitter Status : Successful - Wed Jan 03 18:34:31 2018
+Fitter Status : Successful - Thu Jan 04 11:05:25 2018
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
 Revision Name : enhanced
-Top-level Entity Name : enhanced
+Top-level Entity Name : integrate_test
 Family : Cyclone II
 Device : EP2C20F484C7
 Timing Models : Final
-Total logic elements : 22 / 18,752 ( < 1 % )
-    Total combinational functions : 22 / 18,752 ( < 1 % )
-    Dedicated logic registers : 11 / 18,752 ( < 1 % )
-Total registers : 11
-Total pins : 22 / 315 ( 7 % )
+Total logic elements : 389 / 18,752 ( 2 % )
+    Total combinational functions : 316 / 18,752 ( 2 % )
+    Dedicated logic registers : 281 / 18,752 ( 1 % )
+Total registers : 281
+Total pins : 40 / 315 ( 13 % )
 Total virtual pins : 0
 Total memory bits : 0 / 239,616 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )

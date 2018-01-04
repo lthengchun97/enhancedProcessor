@@ -1,5 +1,5 @@
 Assembler report for enhanced
-Wed Jan 03 18:34:43 2018
+Thu Jan 04 11:05:37 2018
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -38,9 +38,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Jan 03 18:34:43 2018 ;
+; Assembler Status      ; Successful - Thu Jan 04 11:05:37 2018 ;
 ; Revision Name         ; enhanced                              ;
-; Top-level Entity Name ; enhanced                              ;
+; Top-level Entity Name ; integrate_test                        ;
 ; Family                ; Cyclone II                            ;
 ; Device                ; EP2C20F484C7                          ;
 +-----------------------+---------------------------------------+
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+---------------------------------------------------------+
 ; Device         ; EP2C20F484C7                                            ;
 ; JTAG usercode  ; 0xFFFFFFFF                                              ;
-; Checksum       ; 0x001B5155                                              ;
+; Checksum       ; 0x001F1EB6                                              ;
 +----------------+---------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+-----------------------------------------------------+
 ; Device             ; EPCS16                                              ;
 ; JTAG usercode      ; 0x00000000                                          ;
-; Checksum           ; 0x1DD916FD                                          ;
+; Checksum           ; 0x1DD3BD1D                                          ;
 ; Compression Ratio  ; 3                                                   ;
 +--------------------+-----------------------------------------------------+
 
@@ -117,13 +117,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Wed Jan 03 18:34:42 2018
+    Info: Processing started: Thu Jan 04 11:05:36 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off enhanced -c enhanced
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 213 megabytes
-    Info: Processing ended: Wed Jan 03 18:34:43 2018
+    Info: Peak virtual memory: 214 megabytes
+    Info: Processing ended: Thu Jan 04 11:05:37 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -7,12 +7,14 @@ wire [2:0] irOut;
 wire [3:0] showstate;
 
 wire [3:0] simulated;
+wire [7:0] out;
 reg [3:0] expected;
 integer error=0;
 integer cycle=0;
 
 parameter s0=4'b0000,s1=4'b0001,s2=4'b0010,s3=4'b1000,s4=4'b1001,s5=4'b1010,s6=4'b1011,s7=4'b1100,s8=4'b1101,s9=4'b1110,s10=4'b1111;
  assign simulated = showstate;
+ assign out = out1;
   initial
   begin
   clock =0;
@@ -28,9 +30,9 @@ parameter s0=4'b0000,s1=4'b0001,s2=4'b0010,s3=4'b1000,s4=4'b1001,s5=4'b1010,s6=4
 	
   initial
   begin
-  $display("Simulated		Expected		State");
+  $display("Simulated state		Expected state		Current State		Output");
   test();
-  #9000 $finish;
+  #20000 $finish;
   end
   
  task test();
@@ -49,7 +51,7 @@ integrate ee(clock,reset,enter,in1[7:0],halt,out1[7:0],irOut[2:0],showstate[3:0]
 always@(showstate)
   begin
   case(showstate)
-    s0: expected = 4'b0000;
+    s0: expected = 4'b0001;
     s1: expected = 4'b0001;
     s2: expected = 4'b0010;
     s3: expected = 4'b1000;
@@ -64,17 +66,16 @@ always@(showstate)
 endcase
 end 
 
-always@(simulated)
+always@(expected)
 begin
-check(simulated,expected);
+check(simulated,expected,out);
 end
 
 task check;
   input [3:0] simulated_value;
   input [3:0] expected_value;
+  input [7:0] output1;
 begin
-  //enhanced_1();
-  
   if(simulated_value[3:0] != expected_value[3:0])
     begin
       error = error +1;
@@ -82,7 +83,7 @@ begin
     end
    else
    begin
-	$display("%b			%b			%h",simulated_value,expected_value,showstate);
+	$display("%b				%b				%h		%h",simulated_value,expected_value,showstate,output1);
 end
 end
 endtask
